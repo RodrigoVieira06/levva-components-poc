@@ -1,20 +1,72 @@
 0 silly argv {
-0 silly argv   _: [ 'create' ],
+0 silly argv   _: [ 'version' ],
+0 silly argv   private: false,
 0 silly argv   lernaVersion: '8.1.9',
-0 silly argv   '$0': 'lerna',
-0 silly argv   name: 'react-components'
+0 silly argv   '$0': 'node_modules/.bin/lerna'
 0 silly argv }
 1 notice cli v8.1.9
 2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
 3 verbose rootPath /home/rodrigovl/@work/ws-levva/levva-components-poc
-4 warn ENOREMOTE No git remote found, skipping repository property
-5 error Error: canceled
-5 error     at Interface.<anonymous> (/home/rodrigovl/@work/ws-levva/levva-components-poc/node_modules/read/dist/commonjs/read.js:89:21)
-5 error     at Interface.emit (node:events:519:28)
-5 error     at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1126:18)
-5 error     at ReadStream.onkeypress (node:internal/readline/interface:265:20)
-5 error     at ReadStream.emit (node:events:519:28)
-5 error     at emitKeys (node:internal/readline/utils:371:14)
-5 error     at emitKeys.next (<anonymous>)
-5 error     at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
-5 error     at ReadStream.emit (node:events:519:28)
+4 info current version 0.0.2
+5 silly isAnythingCommitted
+6 verbose isAnythingCommitted 1
+7 silly getCurrentBranch
+8 verbose currentBranch master
+9 silly remoteBranchExists
+10 silly isBehindUpstream
+11 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 2
+12 silly hasTags
+13 verbose hasTags true
+14 silly git-describe.sync "v0.0.2-2-gcb1b304" => {"lastTagName":"v0.0.2","lastVersion":"v0.0.2","refCount":"2","sha":"cb1b304","isDirty":false}
+15 info Looking for changed packages since v0.0.2
+16 silly checking diff packages/react-components
+17 silly found diff in packages/react-components/package.json
+17 silly found diff in packages/react-components/src/components/index.ts
+17 silly found diff in packages/react-components/src/index.ts
+18 verbose filtered diff [
+18 verbose filtered diff   'packages/react-components/package.json',
+18 verbose filtered diff   'packages/react-components/src/components/index.ts',
+18 verbose filtered diff   'packages/react-components/src/index.ts'
+18 verbose filtered diff ]
+19 verbose updated react-components
+20 verbose git-describe undefined => "v0.0.2-2-gcb1b304"
+21 silly git-describe parsed => {"lastTagName":"v0.0.2","lastVersion":"v0.0.2","refCount":"2","sha":"cb1b304","isDirty":false}
+22 info execute Skipping releases
+23 silly lifecycle No script for "preversion" in "root", continuing
+24 silly lifecycle No script for "preversion" in "react-components", continuing
+25 verbose version react-components has no lockfile. Skipping lockfile update.
+26 silly lifecycle No script for "version" in "react-components", continuing
+27 silly lifecycle No script for "version" in "root", continuing
+28 verbose version Updating root package-lock.json
+29 error Error: Command failed with exit code 243: npm install --package-lock-only --ignore-scripts
+29 error npm error code EACCES
+29 error npm error syscall open
+29 error npm error path /home/rodrigovl/@work/ws-levva/levva-components-poc/yarn.lock
+29 error npm error errno -13
+29 error npm error Error: EACCES: permission denied, open '/home/rodrigovl/@work/ws-levva/levva-components-poc/yarn.lock'
+29 error npm error     at async open (node:internal/fs/promises:639:25)
+29 error npm error     at async writeFile (node:internal/fs/promises:1212:14)
+29 error npm error     at async Promise.all (index 1)
+29 error npm error     at async [saveIdealTree] (/usr/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:1526:7)
+29 error npm error     at async Arborist.reify (/usr/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:148:5)
+29 error npm error     at async Install.exec (/usr/lib/node_modules/npm/lib/commands/install.js:150:5)
+29 error npm error     at async Npm.exec (/usr/lib/node_modules/npm/lib/npm.js:207:9)
+29 error npm error     at async module.exports (/usr/lib/node_modules/npm/lib/cli/entry.js:74:5) {
+29 error npm error   errno: -13,
+29 error npm error   code: 'EACCES',
+29 error npm error   syscall: 'open',
+29 error npm error   path: '/home/rodrigovl/@work/ws-levva/levva-components-poc/yarn.lock'
+29 error npm error }
+29 error npm error
+29 error npm error The operation was rejected by your operating system.
+29 error npm error It is likely you do not have the permissions to access this file as the current user
+29 error npm error
+29 error npm error If you believe this might be a permissions issue, please double-check the
+29 error npm error permissions of the file and its containing directories, or try running
+29 error npm error the command again as root/Administrator.
+29 error npm error A complete log of this run can be found in: /home/rodrigovl/.npm/_logs/2024-11-18T21_19_01_588Z-debug-0.log
+29 error     at makeError (/home/rodrigovl/@work/ws-levva/levva-components-poc/node_modules/execa/lib/error.js:59:11)
+29 error     at handlePromise (/home/rodrigovl/@work/ws-levva/levva-components-poc/node_modules/execa/index.js:114:26)
+29 error     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+29 error     at async VersionCommand.updatePackageVersions (/home/rodrigovl/@work/ws-levva/levva-components-poc/node_modules/lerna/dist/index.js:9899:13)
+29 error     at async Promise.all (index 0)
